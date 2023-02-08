@@ -1,7 +1,7 @@
-.films {
+.wraper {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
 }

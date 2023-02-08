@@ -1,0 +1,7 @@
+.wraper {
+	background-color: var(--blue-medium);
+	color: #fff;
+	padding: 2rem;
+	text-align: center;
+	margin-top: 20px;
+}
