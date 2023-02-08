@@ -27,6 +27,7 @@ export const getTrendingMovies = async () => {
 };
 
 export const getPopularMovies = async page => {
+	console.log(config.POPULAR_MOVIES + page);
 	try {
 		const response = await fetch(config.POPULAR_MOVIES + page);
 		const data = await response.json();
