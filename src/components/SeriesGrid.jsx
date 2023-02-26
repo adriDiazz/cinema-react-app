@@ -5,16 +5,12 @@ import Filter from './Filter';
 import style from './MovieGrid.module.css';
 import NextPage from './NextPage';
 
-const MovieGrid = ({ getter }) => {
+const SeriesGrid = ({ getter }) => {
 	const [movies, setMovies] = useState([]);
 	const [page, setPage] = useState(1);
 	const [error, setError] = useState(null);
-	const [filter, setFilter] = useState(28);
+	const [filter, setFilter] = useState(80);
 	const [loading, setLoading] = useState(true);
-
-	const filteredMovies = movies.filter(movie => {
-		return movie?.genre_ids.includes(Number(filter));
-	});
 
 	useEffect(() => {
 		getter(page).then(data => {
@@ -28,7 +24,7 @@ const MovieGrid = ({ getter }) => {
 			<Filter setFilter={setFilter} />
 
 			<div className={style.wraper}>
-				{filteredMovies.map(movie => (
+				{movies.map(movie => (
 					<div className={style.movie} key={movie.id}>
 						<img
 							src={config.POSTER_URL + movie.poster_path}
@@ -44,4 +40,4 @@ const MovieGrid = ({ getter }) => {
 	);
 };
 
-export default MovieGrid;
+export default SeriesGrid;

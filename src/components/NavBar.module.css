@@ -22,3 +22,16 @@
 	font-size: 1rem;
 	cursor: pointer;
 }
+
+.link:hover {
+	color: var(--blue-light);
+}
+
+.link {
+	text-decoration: none;
+	color: #fff;
+}
+
+.selected {
+	color: var(--blue-light);
+}

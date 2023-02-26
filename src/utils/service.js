@@ -73,10 +73,10 @@ export const getTopRatedMovies = async page => {
 	}
 };
 
-export const getPopularSeries = async () => {
+export const getPopularSeries = async (page) => {
 	try {
 		const response = await fetch(
-			`${config.API_URL}/trending/tv/week?api_key=${config.API_KEY}`
+			`https://api.themoviedb.org/3/tv/popular?api_key=ce742173023d2188458fe422a051acb0&language=en-US&page=1`
 		);
 
 		if (response.ok) {

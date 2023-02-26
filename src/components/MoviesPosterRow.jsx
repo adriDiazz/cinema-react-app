@@ -7,7 +7,6 @@ const MoviesPosterRow = ({ getter, title }) => {
 
 	useEffect(() => {
 		getter(1).then(movies => {
-			console.log(movies);
 			setMovies(movies.data);
 		});
 	}, []);

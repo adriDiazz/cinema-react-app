@@ -1,7 +1,12 @@
 import style from './Button.module.css';
 
-const Button = props => {
-	return <button {...props} className={style.btn}></button>;
+const Button = ({ loading, ...props }) => {
+	return (
+		<button
+			{...props}
+			className={`${style.btn} ${loading && style.loading}`}
+		></button>
+	);
 };
 
 export default Button;

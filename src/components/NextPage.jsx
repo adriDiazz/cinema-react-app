@@ -1,10 +1,12 @@
 import Button from './UI/Button';
 import style from './NextPage.module.css';
 
-const NextPage = ({ setPage }) => {
+const NextPage = ({ setPage, loading }) => {
 	return (
 		<div className={style.wraper}>
-			<Button onClick={() => setPage(prev => prev + 1)}>Load More</Button>
+			<Button onClick={() => setPage(prev => prev + 1)} loading>
+				Load More
+			</Button>
 		</div>
 	);
 };
