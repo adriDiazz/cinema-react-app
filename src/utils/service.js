@@ -150,3 +150,31 @@ export const getGenres = async () => {
 		};
 	}
 };
+
+
+export const getMovieDetailsById = async (movieId) => {
+	try {
+		const response = await fetch(
+			`https://api.themoviedb.org/3/movie/${movieId}?api_key=ce742173023d2188458fe422a051acb0&language=en-US`
+		);
+
+		if (response.ok) {
+			const data = await response.json();
+			return {
+				data,
+				error: null
+			};
+		} else {
+			return {
+				data: null,
+				error: 'Something went wrong'
+			};
+		}
+	} catch (error) {
+		return {
+			data: null,
+			error: error.message
+		};
+	}
+
+}

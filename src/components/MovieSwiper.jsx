@@ -1,15 +1,17 @@
 import StarIcon from './Icons/StarIcon';
 import Button from './UI/Button';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Navigation } from 'swiper';
+import { Autoplay, EffectFade } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 import style from './MovieSwiper.module.css';
 import { config } from '../utils/config';
+import { useNavigate } from 'react-router-dom';
 
 const MovieSwiper = ({ movies, poster }) => {
+	const navigate = useNavigate();
 	let breakpoints;
 
 	if (poster) {
@@ -69,6 +71,7 @@ const MovieSwiper = ({ movies, poster }) => {
 							src={config.POSTER_URL + movie.poster_path}
 							alt=''
 							className={style.img}
+							onClick={() => navigate(`/movie/${movie.id}`)}
 						/>
 					</SwiperSlide>
 				) : (
